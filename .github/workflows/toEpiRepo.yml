@@ -1,0 +1,42 @@
+name: toEpiRepo
+
+on: [push, pull_request]
+
+jobs:
+  launchPacman:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2.2.2
+        with:
+          python-version: 3.9.7
+
+      - name: Install Depedencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install python3-pip
+
+      - name: Launch Tests
+        continue-on-error: true
+        run: |
+          ./304pacman testFile '*' 'M' >> testResult
+          ./304pacman testFile '0' '*' >> testResult
+          ./304pacman testFile '*' '0' >> testResult
+          ./304pacman testFile '*' '*' >> testResult
+
+      - uses: actions/upload-artifact@v2
+        with:
+          path: |
+            ./testResult
+
+  pushOnEpitech:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wearerequired/git-mirror-action@v1.0.1
+        if: github.repository == '0Nom4D/304pacman'
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
+        with:
+          source-repo: git@github.com:0Nom4D/304pacman.git
+          destination-repo: git@github.com:EpitechPromo2024/B-MAT-500-NAN-5-1-304pacman-arthur.adam.git
