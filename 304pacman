@@ -27,6 +27,8 @@ def print_usage() -> int:
 def main() -> int:
     if len(argv) == 2 and (argv[1] == '-h' or argv[1] == "--help"):
         return (print_usage())
+    elif (len(argv)) != 4:
+        return (exitCode.ERROR)
     Handler = ArgChecker(argv[1:])
     if not Handler.analyseParams():
         return (exitCode.ERROR)

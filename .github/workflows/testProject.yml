@@ -20,10 +20,10 @@ jobs:
       - name: Launch Tests
         continue-on-error: true
         run: |
-          ./304pacman testFile '*' 'M' >> testResult
-          ./304pacman testFile '0' '*' >> testResult
-          ./304pacman testFile '*' '0' >> testResult
-          ./304pacman testFile '*' '*' >> testResult
+          ./304pacman map01 '*' 'M' >> testResult
+          ./304pacman map01 '0' '*' >> testResult
+          ./304pacman map01 '*' '0' >> testResult
+          ./304pacman map01 '*' '*' >> testResult
 
       - uses: actions/upload-artifact@v2
         with:
