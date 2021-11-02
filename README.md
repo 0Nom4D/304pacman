@@ -49,6 +49,7 @@ DESCRIPTION
 ## Authors
 
 * **Arthur Adam** - [0Nom4D](https://github.com/0Nom4D)
+* **Gildas Gonzalez** - [GildasGonz](https://github.com/GildasGonz)
 
 **EPITECH NANTES**
 
