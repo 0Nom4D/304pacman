@@ -34,11 +34,24 @@ class ArgChecker:
         return True
 
     def checkFileContent(self) -> bool:
+        basic_size = 0
+        total_size = 0
+        line_size = 0
+
         with open(self.file) as fd:
             for line in fd:
                 line = line.lstrip().rstrip().rstrip('\n')
+                if basic_size == 0:
+                    basic_size = len(line)
+                else:
+                    line_size = len(line)
+                    if basic_size != line_size:
+                        return False
                 for idx in range(len(line)):
                     if line[idx] not in fileChars:
                         return False
+                total_size += 1
+        if total_size < 3:
+            return False
         fd.close()
         return True
