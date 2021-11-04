@@ -8,7 +8,7 @@
 
 from sources.ArgumentsHandling import ArgChecker
 from sources.exitCode import exitCode
-from sources.Pacman import Pacman
+from sources.Engine import Engine
 from sys import argv
 
 def print_usage() -> int:
@@ -32,7 +32,7 @@ def main() -> int:
     Handler = ArgChecker(argv[1:])
     if not Handler.analyseParams():
         return (exitCode.ERROR)
-    PacmanRunner = Pacman()
+    PacmanRunner = Engine(argv[1:])
     return (exitCode.OK)
 
 if __name__ == "__main__":
