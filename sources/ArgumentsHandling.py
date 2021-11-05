@@ -27,6 +27,8 @@ class ArgChecker:
             return False
         elif isEmpty(self.file):
             return False
+        if len(self.fst_char) != 1 or len(self.snd_char) != 1:
+            return False
         if self.fst_char in fileChars or self.snd_char in fileChars or self.fst_char == self.snd_char:
             return False
         if not self.checkFileContent():

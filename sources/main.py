@@ -22,7 +22,7 @@ def print_usage() -> int:
     print("\t\t\t'P' for Pacman's position")
     print("\tc1\tcharacter to display for a wall")
     print("\tc2\tcharacter to display for an empty space")
-    return (0)
+    return (exitCode.OK)
 
 def main() -> int:
     if len(argv) == 2 and (argv[1] == '-h' or argv[1] == "--help"):
@@ -32,7 +32,7 @@ def main() -> int:
     Handler = ArgChecker(argv[1:])
     if not Handler.analyseParams():
         return (exitCode.ERROR)
-    PacmanRunner = Engine(argv[1:])
+    PacmanRunner = Engine(argv[1:]).runShortestPath()
     return (exitCode.OK)
 
 if __name__ == "__main__":

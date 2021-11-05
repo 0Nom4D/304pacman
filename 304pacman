@@ -32,7 +32,7 @@ def main() -> int:
     Handler = ArgChecker(argv[1:])
     if not Handler.analyseParams():
         return (exitCode.ERROR)
-    PacmanRunner = Engine(argv[1:])
+    PacmanRunner = Engine(argv[1:]).runShortestPath()
     return (exitCode.OK)
 
 if __name__ == "__main__":

@@ -20,10 +20,13 @@ jobs:
       - name: Launch Tests
         continue-on-error: true
         run: |
-          ./304pacman map01 '*' 'M' >> testResult
-          ./304pacman map01 '0' '*' >> testResult
-          ./304pacman map01 '*' '0' >> testResult
-          ./304pacman map01 '*' '*' >> testResult
+          ./304pacman maps/map01 '@' ' ' >> testResult
+          ./304pacman maps/map01 '0' '*' >> testResult
+          ./304pacman maps/map01 '*' '0' >> testResult
+          ./304pacman maps/map01 '*' '*' >> testResult
+          ./304pacman maps/map_closed '@' ' ' >> testResult
+          ./304pacman maps/map_closed_2 '@' ' ' >> testResult
+          ./304pacman maps/map_big_with_walls '@' ' ' >> testResult
 
       - uses: actions/upload-artifact@v2
         with:
