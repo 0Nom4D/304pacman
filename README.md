@@ -6,6 +6,8 @@
 
 ## Before continuing...
 
+[![Documentation](https://img.shields.io/badge/Documentation-PDoc3-blue?style=flat-square)](https://0nom4d.github.io/304pacman/)
+
 This project is an EPITECH Project. If you are an EPITECH student, move out the way!
 
 Nothing to see here... The group don't want to be involved to your -42.
