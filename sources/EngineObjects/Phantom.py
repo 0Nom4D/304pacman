@@ -8,4 +8,7 @@
 from sources.EngineObjects.EngineObject import EngineObj
 
 class Phantom(EngineObj):
+    """
+    Class designating a Ghost object
+    """
     pass

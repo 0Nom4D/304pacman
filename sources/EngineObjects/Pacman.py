@@ -8,4 +8,7 @@
 from sources.EngineObjects.EngineObject import EngineObj
 
 class Pacman(EngineObj):
+    """
+    Class designating a Pacman Player object
+    """
     pass

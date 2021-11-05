@@ -11,14 +11,45 @@ from os import stat
 fileChars = ['0', '1', 'F', 'P']
 
 class ArgChecker:
+    """
+    Class acting as an argument checker
+
+    Attributes
+    -------
+    file: str
+        Path to the map file
+    fst_char: str
+        Character designating a wall
+    snd_char: str
+        Character designating an emtpy space
+    """
     def __init__(self, args: list) -> None:
         self.file = args[0]
         self.fst_char = args[1]
         self.snd_char = args[2]
 
     def analyseParams(self) -> bool:
+        """
+        Analyse parameters and checks for an error
+
+        Returns
+        -------
+        True if no error has been found, otherwise False
+        """
 
         def isEmpty(filename: str) -> bool:
+            """
+            Checks if the file passed as parameter is empty
+
+            Parameter(s)
+            -------
+            filename: str
+                Path to the map file
+
+            Returns
+            -------
+            True if the file is empty, otherwise False
+            """
             if stat(filename).st_size == 0:
                 return True
             return False
@@ -36,6 +67,13 @@ class ArgChecker:
         return True
 
     def checkFileContent(self) -> bool:
+        """
+        Checks if any error can occur from the map file
+
+        Returns
+        -------
+        True if no error has been found, otherwise False
+        """
         basic_size = 0
         total_size = 0
         line_size = 0

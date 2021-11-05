@@ -12,6 +12,13 @@ from sources.Engine import Engine
 from sys import argv
 
 def print_usage() -> int:
+    """
+    Print the program usage informations.
+
+    Returns
+    -------
+    Always return 0.
+    """
     print("USAGE")
     print("\t./304pacman file c1 c2")
     print("DESCRIPTION")

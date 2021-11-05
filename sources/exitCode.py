@@ -8,5 +8,8 @@
 from enum import IntEnum
 
 class exitCode(IntEnum):
+    """
+    EPITECH Exit Codes
+    """
     ERROR = 84
     OK = 0
