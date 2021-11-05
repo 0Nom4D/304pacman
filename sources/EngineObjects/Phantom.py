@@ -5,17 +5,7 @@
 ## Phantom
 ##
 
-class Phantom:
-    def __init__(self, mapFile: list) -> None:
-        self.positionX, self.positionY = self.getPositionFromMap(mapFile)
-        pass
+from sources.EngineObjects.EngineObject import PacmanObj
 
-    def getPositionFromMap(self, fileContent: list):
-        for absc in range(len(fileContent)):
-            for ordn in range(len(fileContent[absc])):
-                if fileContent[absc][ordn] == 'F':
-                    return absc, ordn
-        return -1, -1
-
-    def getPosition(self):
-        return self.positionX, self.positionY
+class Phantom(PacmanObj):
+    pass
