@@ -5,7 +5,7 @@
 ## Pacman
 ##
 
-from sources.EngineObjects.EngineObject import PacmanObj
+from sources.EngineObjects.EngineObject import EngineObj
 
-class Pacman(PacmanObj):
+class Pacman(EngineObj):
     pass

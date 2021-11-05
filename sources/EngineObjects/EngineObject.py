@@ -5,7 +5,7 @@
 ## EngineObject
 ##
 
-class PacmanObj:
+class EngineObj:
     def __init__(self, mapContent: list, wallChar: str, checkedChar: str) -> None:
         self.positionX, self.positionY = self.getPositionFromMap(mapContent, wallChar, checkedChar)
         pass

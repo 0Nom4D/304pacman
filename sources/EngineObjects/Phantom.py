@@ -5,7 +5,7 @@
 ## Phantom
 ##
 
-from sources.EngineObjects.EngineObject import PacmanObj
+from sources.EngineObjects.EngineObject import EngineObj
 
-class Phantom(PacmanObj):
+class Phantom(EngineObj):
     pass
