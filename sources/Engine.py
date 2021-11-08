@@ -19,8 +19,6 @@ class Engine:
         self.map_size = len(self.map)
         self.phantom = Phantom(self.map, self.wallChar, 'F')
         self.pacman = Pacman(self.map, self.wallChar, 'P')
-        if self.phantom.getPosition() == (-1, -1) or self.pacman.getPosition() == (-1, -1):
-            exit(84)
         pass
 
     def extractMap(self, mapFile: str) -> list:

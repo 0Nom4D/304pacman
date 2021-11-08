@@ -14,9 +14,7 @@ class EngineObj:
         for absc in range(len(fileContent)):
             for ordn in range(len(fileContent[absc])):
                 if fileContent[absc][ordn] == checkedChar:
-                    if not self.isInWalls(fileContent, absc, ordn, wallChar):
-                        return absc, ordn
-        return -1, -1
+                    return absc, ordn
 
     def isInWalls(self, content: list, x: int, y: int, wallChar: str) -> bool:
         if content[x + 1][y] == wallChar and content[x - 1][y] == wallChar and content[x][y + 1] == wallChar and content[x][y - 1] == wallChar:

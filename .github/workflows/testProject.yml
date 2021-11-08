@@ -18,10 +18,11 @@ jobs:
           sudo apt-get install python3-pip
 
       - name: Launch Subject Tests
-        continue-on-error: true
         run: |
           ./304pacman maps/map01 '@' ' ' >> testResult
           ./304pacman maps/map_big_with_walls '@' ' ' >> testResult
+          ./304pacman maps/map_closed '@' ' ' >> testResult
+          ./304pacman maps/map_closed_2 '@' ' ' >> testResult
 
       - name: Launch Error Handling Test 1
         continue-on-error: true
@@ -34,14 +35,6 @@ jobs:
       - name: Launch Error Handling Test 3
         continue-on-error: true
         run: ./304pacman maps/map01 '*' '*' >> testResult
-
-      - name: Launch Error Handling Test 4
-        continue-on-error: true
-        run: ./304pacman maps/map_closed '@' ' ' >> testResult
-
-      - name: Launch Error Handling Test 5
-        continue-on-error: true
-        run: ./304pacman maps/map_closed_2 '@' ' ' >> testResult
 
       - uses: actions/upload-artifact@v2
         with:

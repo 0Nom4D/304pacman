@@ -39,6 +39,8 @@ class ArgChecker:
         basic_size = 0
         total_size = 0
         line_size = 0
+        nb_pacman = 0
+        nb_ghost = 0
 
         with open(self.file) as fd:
             for line in fd:
@@ -52,8 +54,12 @@ class ArgChecker:
                 for idx in range(len(line)):
                     if line[idx] not in fileChars:
                         return False
+                nb_pacman += line.count('P')
+                nb_ghost += line.count('F')
                 total_size += 1
         if total_size < 3:
+            return False
+        elif nb_pacman != 1 or nb_ghost != 1:
             return False
         fd.close()
         return True
