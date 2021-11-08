@@ -1,4 +1,4 @@
-name: Push
+name: Push To Epitech Repository
 
 on: push
 

@@ -1,4 +1,4 @@
-name: ProjectTests
+name: Functionnal Project Tests
 
 on: [push, pull_request]
 

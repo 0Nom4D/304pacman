@@ -50,16 +50,20 @@ class ArgChecker:
                 else:
                     line_size = len(line)
                     if basic_size != line_size:
+                        fd.close()
                         return False
                 for idx in range(len(line)):
                     if line[idx] not in fileChars:
+                        fd.close()
                         return False
                 nb_pacman += line.count('P')
                 nb_ghost += line.count('F')
                 total_size += 1
         if total_size < 3:
+            fd.close()
             return False
         elif nb_pacman != 1 or nb_ghost != 1:
+            fd.close()
             return False
         fd.close()
         return True

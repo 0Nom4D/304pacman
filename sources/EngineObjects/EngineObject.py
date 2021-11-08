@@ -15,11 +15,12 @@ class EngineObj:
             for ordn in range(len(fileContent[absc])):
                 if fileContent[absc][ordn] == checkedChar:
                     return absc, ordn
+        return -1, -1
 
     def isInWalls(self, content: list, x: int, y: int, wallChar: str) -> bool:
         if content[x + 1][y] == wallChar and content[x - 1][y] == wallChar and content[x][y + 1] == wallChar and content[x][y - 1] == wallChar:
             return True
         return False
 
-    def getPosition(self):
-        return self.positionX, self.positionY
+    def getPosition(self) -> int:
+        return (self.positionX, self.positionY)
