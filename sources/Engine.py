@@ -49,7 +49,7 @@ class Engine:
         def computeDijkstra(lastIdx: int, x: int, y: int, x_offset: int, y_offset: int) -> bool:
 
             def isPositionValid(x: int, y: int) -> bool:
-                if x < 0 or x >= self.map_size or y < 0 or y >= self.map_size:
+                if x < 0 or x >= self.map_size or y < 0 or y >= len(self.map[0]):
                     return False
                 return True
 
