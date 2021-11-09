@@ -77,7 +77,8 @@ class ArgChecker:
         basic_size = 0
         total_size = 0
         line_size = 0
-
+        nb_pacman = 0
+        nb_ghost = 0
         with open(self.file) as fd:
             for line in fd:
                 line = line.lstrip().rstrip().rstrip('\n')
@@ -85,13 +86,22 @@ class ArgChecker:
                     basic_size = len(line)
                 else:
                     line_size = len(line)
-                    if basic_size != line_size:
-                        return False
+                    if line_size != 0:
+                        if basic_size != line_size:
+                            fd.close()
+                            return False
                 for idx in range(len(line)):
                     if line[idx] not in fileChars:
+                        fd.close()
                         return False
+                nb_pacman += line.count('P')
+                nb_ghost += line.count('F')
                 total_size += 1
         if total_size < 3:
+            fd.close()
+            return False
+        elif nb_pacman != 1 or nb_ghost != 1:
+            fd.close()
             return False
         fd.close()
         return True
