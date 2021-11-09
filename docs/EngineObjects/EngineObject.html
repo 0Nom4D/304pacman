@@ -44,11 +44,11 @@ class EngineObj:
     positionY: int
         Y position of the object within the file
     &#34;&#34;&#34;
-    def __init__(self, mapContent: list, wallChar: str, checkedChar: str) -&gt; None:
-        self.positionX, self.positionY = self.getPositionFromMap(mapContent, wallChar, checkedChar)
+    def __init__(self, mapContent: list, checkedChar: str) -&gt; None:
+        self.positionX, self.positionY = self.getPositionFromMap(mapContent, checkedChar)
         pass
 
-    def getPositionFromMap(self, fileContent: list, wallChar: str, checkedChar: str):
+    def getPositionFromMap(self, fileContent: list, checkedChar: str):
         &#34;&#34;&#34;
         Gets the position of the asked object within the map file
 
@@ -94,7 +94,7 @@ class EngineObj:
 <dl>
 <dt id="sources.EngineObjects.EngineObject.EngineObj"><code class="flex name class">
 <span>class <span class="ident">EngineObj</span></span>
-<span>(</span><span>mapContent: list, wallChar: str, checkedChar: str)</span>
+<span>(</span><span>mapContent: list, checkedChar: str)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Class designating an object such as a Phantom or a Pacman Player</p>
@@ -120,11 +120,11 @@ class EngineObj:
     positionY: int
         Y position of the object within the file
     &#34;&#34;&#34;
-    def __init__(self, mapContent: list, wallChar: str, checkedChar: str) -&gt; None:
-        self.positionX, self.positionY = self.getPositionFromMap(mapContent, wallChar, checkedChar)
+    def __init__(self, mapContent: list, checkedChar: str) -&gt; None:
+        self.positionX, self.positionY = self.getPositionFromMap(mapContent, checkedChar)
         pass
 
-    def getPositionFromMap(self, fileContent: list, wallChar: str, checkedChar: str):
+    def getPositionFromMap(self, fileContent: list, checkedChar: str):
         &#34;&#34;&#34;
         Gets the position of the asked object within the map file
 
@@ -191,7 +191,7 @@ class EngineObj:
 </details>
 </dd>
 <dt id="sources.EngineObjects.EngineObject.EngineObj.getPositionFromMap"><code class="name flex">
-<span>def <span class="ident">getPositionFromMap</span></span>(<span>self, fileContent: list, wallChar: str, checkedChar: str)</span>
+<span>def <span class="ident">getPositionFromMap</span></span>(<span>self, fileContent: list, checkedChar: str)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Gets the position of the asked object within the map file</p>
@@ -211,7 +211,7 @@ class EngineObj:
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def getPositionFromMap(self, fileContent: list, wallChar: str, checkedChar: str):
+<pre><code class="python">def getPositionFromMap(self, fileContent: list, checkedChar: str):
     &#34;&#34;&#34;
     Gets the position of the asked object within the map file
 

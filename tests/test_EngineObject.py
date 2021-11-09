@@ -8,7 +8,6 @@
 from sources.EngineObjects.EngineObject import EngineObj
 from sources.EngineObjects.Phantom import Phantom
 from sources.EngineObjects.Pacman import Pacman
-from sys import argv
 from pytest import *
 
 class TestEngineObjects:
@@ -20,21 +19,21 @@ class TestEngineObjects:
     empty_map = ["1111111111", "1111111111"]
 
     def test_fetching_with_basic_map(self):
-        newObj_1 = EngineObj(self.basic_map, '1', 'P')
-        newObj_2 = EngineObj(self.basic_map, '1', 'F')
+        newObj_1 = EngineObj(self.basic_map, 'P')
+        newObj_2 = EngineObj(self.basic_map, 'F')
         assert newObj_1.getPosition() == (6, 5)
         assert newObj_2.getPosition() == (4, 5)
 
     def test_fetching_with_empty_map(self):
-        newObj_1 = EngineObj(self.empty_map, '1', 'P')
-        newObj_2 = EngineObj(self.empty_map, '1', 'F')
+        newObj_1 = EngineObj(self.empty_map, 'P')
+        newObj_2 = EngineObj(self.empty_map, 'F')
         assert newObj_1.getPosition() == (-1, -1)
         assert newObj_2.getPosition() == (-1, -1)
 
     def test_create_pacman(self):
-        newPacman = Pacman(self.basic_map, '1', 'P')
+        newPacman = Pacman(self.basic_map, 'P')
         assert newPacman.getPosition() == (6, 5)
 
     def test_create_phantom(self):
-        newPhantom = Phantom(self.basic_map, '1', 'F')
+        newPhantom = Phantom(self.basic_map, 'F')
         assert newPhantom.getPosition() == (4, 5)

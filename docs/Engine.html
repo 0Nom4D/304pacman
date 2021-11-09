@@ -63,8 +63,8 @@ class Engine:
         # Map Properties
         self.map = self.extractMap(args[0])
         self.map_size = len(self.map)
-        self.phantom = Phantom(self.map, self.wallChar, &#39;F&#39;)
-        self.pacman = Pacman(self.map, self.wallChar, &#39;P&#39;)
+        self.phantom = Phantom(self.map, &#39;F&#39;)
+        self.pacman = Pacman(self.map, &#39;P&#39;)
         pass
 
     def extractMap(self, mapFile: str) -&gt; list:
@@ -266,8 +266,8 @@ class Engine:
         # Map Properties
         self.map = self.extractMap(args[0])
         self.map_size = len(self.map)
-        self.phantom = Phantom(self.map, self.wallChar, &#39;F&#39;)
-        self.pacman = Pacman(self.map, self.wallChar, &#39;P&#39;)
+        self.phantom = Phantom(self.map, &#39;F&#39;)
+        self.pacman = Pacman(self.map, &#39;P&#39;)
         pass
 
     def extractMap(self, mapFile: str) -&gt; list:

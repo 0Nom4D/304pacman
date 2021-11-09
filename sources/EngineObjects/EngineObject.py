@@ -16,11 +16,11 @@ class EngineObj:
     positionY: int
         Y position of the object within the file
     """
-    def __init__(self, mapContent: list, wallChar: str, checkedChar: str) -> None:
-        self.positionX, self.positionY = self.getPositionFromMap(mapContent, wallChar, checkedChar)
+    def __init__(self, mapContent: list, checkedChar: str) -> None:
+        self.positionX, self.positionY = self.getPositionFromMap(mapContent, checkedChar)
         pass
 
-    def getPositionFromMap(self, fileContent: list, wallChar: str, checkedChar: str):
+    def getPositionFromMap(self, fileContent: list, checkedChar: str):
         """
         Gets the position of the asked object within the map file
 
