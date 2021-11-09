@@ -65,8 +65,6 @@ class Engine:
         self.map_size = len(self.map)
         self.phantom = Phantom(self.map, self.wallChar, &#39;F&#39;)
         self.pacman = Pacman(self.map, self.wallChar, &#39;P&#39;)
-        if self.phantom.getPosition() == (-1, -1) or self.pacman.getPosition() == (-1, -1):
-            exit(84)
         pass
 
     def extractMap(self, mapFile: str) -&gt; list:
@@ -153,7 +151,7 @@ class Engine:
                 -------
                 True if the position is valid, otherwise False
                 &#34;&#34;&#34;
-                if x &lt; 0 or x &gt;= self.map_size or y &lt; 0 or y &gt;= self.map_size:
+                if x &lt; 0 or x &gt;= self.map_size or y &lt; 0 or y &gt;= len(self.map[0]):
                     return False
                 return True
 
@@ -270,8 +268,6 @@ class Engine:
         self.map_size = len(self.map)
         self.phantom = Phantom(self.map, self.wallChar, &#39;F&#39;)
         self.pacman = Pacman(self.map, self.wallChar, &#39;P&#39;)
-        if self.phantom.getPosition() == (-1, -1) or self.pacman.getPosition() == (-1, -1):
-            exit(84)
         pass
 
     def extractMap(self, mapFile: str) -&gt; list:
@@ -358,7 +354,7 @@ class Engine:
                 -------
                 True if the position is valid, otherwise False
                 &#34;&#34;&#34;
-                if x &lt; 0 or x &gt;= self.map_size or y &lt; 0 or y &gt;= self.map_size:
+                if x &lt; 0 or x &gt;= self.map_size or y &lt; 0 or y &gt;= len(self.map[0]):
                     return False
                 return True
 
@@ -546,7 +542,7 @@ class Engine:
             -------
             True if the position is valid, otherwise False
             &#34;&#34;&#34;
-            if x &lt; 0 or x &gt;= self.map_size or y &lt; 0 or y &gt;= self.map_size:
+            if x &lt; 0 or x &gt;= self.map_size or y &lt; 0 or y &gt;= len(self.map[0]):
                 return False
             return True
 
