@@ -17,7 +17,6 @@ class ArgChecker:
         self.snd_char = args[2]
 
     def analyseParams(self) -> bool:
-
         def isEmpty(filename: str) -> bool:
             if stat(filename).st_size == 0:
                 return True
@@ -41,7 +40,6 @@ class ArgChecker:
         line_size = 0
         nb_pacman = 0
         nb_ghost = 0
-
         with open(self.file) as fd:
             for line in fd:
                 line = line.lstrip().rstrip().rstrip('\n')
@@ -49,9 +47,10 @@ class ArgChecker:
                     basic_size = len(line)
                 else:
                     line_size = len(line)
-                    if basic_size != line_size:
-                        fd.close()
-                        return False
+                    if line_size != 0:
+                        if basic_size != line_size:
+                            fd.close()
+                            return False
                 for idx in range(len(line)):
                     if line[idx] not in fileChars:
                         fd.close()
