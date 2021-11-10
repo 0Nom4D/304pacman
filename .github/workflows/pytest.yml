@@ -20,7 +20,7 @@ jobs:
           sudo pip install pytest
 
       - name: Launch Python Unit Tests
-        run: coverage run -m --source=sources/ pytest -rA tests/ >> uTestsResults
+        run: coverage run -m --source=sources/ pytest --capture=sys -rA tests/ >> uTestsResults
 
       - name: Compute Unit Tests Coverage
         run: coverage report -m >> coverageReport
