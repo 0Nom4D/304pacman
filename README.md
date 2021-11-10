@@ -6,6 +6,8 @@
 
 ## Before continuing...
 
+[![Functionnal Project Tests](https://github.com/0Nom4D/304pacman/actions/workflows/testProject.yml/badge.svg?branch=master&event=push)](https://github.com/0Nom4D/304pacman/actions/workflows/testProject.yml)
+[![PyTest Computing](https://github.com/0Nom4D/304pacman/actions/workflows/pytest.yml/badge.svg?branch=master&event=push)](https://github.com/0Nom4D/304pacman/actions/workflows/pytest.yml)
 [![Documentation](https://img.shields.io/badge/Documentation-PDoc3-blue?style=flat-square)](https://0nom4d.github.io/304pacman/)
 
 This project is an EPITECH Project. If you are an EPITECH student, move out the way!
